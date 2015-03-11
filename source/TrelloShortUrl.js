@@ -80,8 +80,11 @@
         label.className = "button-label";
         label.innerHTML = " Short URL";
         this.button.appendChild(label);
-
-        return actions.insertBefore(this.button, actions.children[0]);
+        actions.insertBefore(this.button, actions.children[0]);
+        
+        var currentListElement = document.querySelector('.window-title .js-current-list p');
+        currentListElement.insertBefore(document.createTextNode('#'+cardId+' '), currentListElement.firstChild);
+        
       };
 
       TrelloShortUrl.prototype.buttonClick = function(event) {
